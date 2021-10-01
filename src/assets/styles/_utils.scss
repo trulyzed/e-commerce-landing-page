@@ -1,0 +1,10 @@
+@function scaleVal(
+  $value,
+  $referenceWidth: $referenceWidth,
+  $min: 350px,
+  $max: 3840px
+) {
+  @return calc(
+    #{$value} * (clamp(#{$min}, 100vw, #{$max}) / #{$referenceWidth})
+  );
+}

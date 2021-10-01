@@ -1,0 +1,97 @@
+@import './typography';
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: scaleVal(20) scaleVal(50);
+}
+
+.cta-button {
+  width: scaleVal(60);
+  height: scaleVal(25);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: scaleVal(30);
+  cursor: pointer;
+  @include flex-center;
+
+  &__text {
+    @include text1;
+
+    &--dark {
+      @include text-dark;
+    }
+  }
+}
+
+.cta-card-block {
+  display: flex;
+  height: scaleVal(650);
+
+  &__left {
+    display: flex;
+    flex: 10;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    flex: 13;
+
+    &__top {
+      display: flex;
+      flex: 35;
+    }
+
+    &__bottom {
+      display: flex;
+      flex: 29;
+
+      .cta-card:first-child {
+        flex: 19;
+      }
+      .cta-card:last-child {
+        flex: 13;
+      }
+    }
+  }
+}
+
+.cta-card {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: scaleVal(40);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &--bottom-left {
+      margin-top: auto;
+      align-items: flex-start;
+    }
+  }
+
+  &__category {
+    @include text2;
+    margin-bottom: scaleVal(26);
+  }
+  &__title {
+    @include text3;
+  }
+  &__big-title {
+    @include text4;
+    margin-bottom: scaleVal(20);
+  }
+  &__details {
+    @include text5;
+  }
+}

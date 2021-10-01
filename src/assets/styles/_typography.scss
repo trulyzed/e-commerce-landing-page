@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@font-face {
+  font-family: 'Renner*';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Renner*-400.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Renner*';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Renner*-700.ttf') format('truetype');
+}
+
+
+@mixin font-renner {
+  font-family: 'Renner*';
+}
+@mixin font-poppins {
+  font-family: 'Poppins';
+}
+
+@mixin text-dark {
+  color: #313132;
+}
+
+@mixin text1 {
+  @include font-renner;
+  font-size: scaleVal(10);
+  line-height: scaleVal(10);
+  color: white;
+}
+
+@mixin text2 {
+  @include font-poppins;
+  font-weight: 500;
+  font-size: scaleVal(12);
+  line-height: scaleVal(12);
+  text-transform: uppercase;
+  color: $primaryColor;
+}
+
+@mixin text3 {
+  @include font-renner;
+  font-weight: 400;
+  font-size: scaleVal(18);
+  line-height: scaleVal(18);
+  text-transform: uppercase;
+  color: white;
+}
+
+@mixin text4 {
+  @include font-renner;
+  font-weight: 400;
+  font-size: scaleVal(36);
+  line-height: scaleVal(40);
+  text-transform: uppercase;
+  color: black;
+}
+
+@mixin text5 {
+  @include font-renner;
+  font-weight: 700;
+  font-size: scaleVal(30);
+  line-height: scaleVal(30);
+  text-transform: uppercase;
+  color: white;
+}
