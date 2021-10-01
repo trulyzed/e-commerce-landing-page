@@ -32,49 +32,6 @@ const CTACards = [
   },
 ];
 
-const products = [
-  {
-    id: 1,
-    title: 'Strandmon Armchair',
-    photo: '/images/prod1.png',
-    rating: 5,
-    totalReviews: 3,
-    currency: 'BDT',
-    price: 2500,
-    originalPrice: 15000,
-  },
-  {
-    id: 2,
-    title: 'Malm',
-    photo: '/images/prod2.png',
-    rating: 5,
-    totalReviews: 3,
-    currency: 'BDT',
-    price: 2500,
-    originalPrice: 15000,
-  },
-  {
-    id: 3,
-    title: 'Hemlingby',
-    photo: '/images/prod3.png',
-    rating: 5,
-    totalReviews: 3,
-    currency: 'BDT',
-    price: 2500,
-    originalPrice: 15000,
-  },
-  {
-    id: 4,
-    title: 'Ivar',
-    photo: '/images/prod4.png',
-    rating: 5,
-    totalReviews: 3,
-    currency: 'BDT',
-    price: 2500,
-    originalPrice: 15000,
-  }
-]
-
 export class Home extends Component {
   render () {
     return (
@@ -115,7 +72,7 @@ export class Home extends Component {
               </p>
             </div>
 
-            <ProductList products={products} />
+            <ProductList products={[]} />
           </div>
         </section>
       </>

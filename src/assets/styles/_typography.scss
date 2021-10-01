@@ -82,3 +82,10 @@
   line-height: scaleVal(12);
   color: black;
 }
+
+@mixin text8 {
+  @include font-poppins;
+  font-weight: 400;
+  font-size: scaleVal(12);
+  line-height: scaleVal(12);
+}
