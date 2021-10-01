@@ -37,6 +37,15 @@
   cursor: pointer;
   @include flex-center;
 
+  &--outline {
+    background-color: white;
+    border: 1px solid $dark;
+
+    span {
+      color: $dark;
+    }
+  }
+
   &__text {
     @include text1;
 
@@ -137,6 +146,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: scaleVal(-10);
+  margin-bottom: scaleVal(12);
 }
 
 .product-item {
@@ -273,5 +283,15 @@
       }
     }
   }
+}
 
+.lazyloader-block {
+  @include flex-center;
+  flex-direction: column;
+
+  &__text {
+    padding: scaleVal(9) scaleVal(44);
+    border-bottom: 1px solid $dark;
+    margin-bottom: scaleVal(12);
+  }
 }

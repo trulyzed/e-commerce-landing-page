@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { CTAButton } from "../CTA/CTAButton";
 import { ProductItem } from "./ProductItem";
 
 const products = [
@@ -1273,14 +1274,21 @@ export class ProductList extends Component {
     //const { products=[] } = this.props;
 
     return (
-      <div className={'product-list'}>
-        {products.map(p => (
-          <ProductItem
-            key={p.id}
-            product={p}
-          />
-        ))}
-      </div>
+      <>
+        <div className={'product-list'}>
+          {products.map(p => (
+            <ProductItem
+              key={p.id}
+              product={p}
+            />
+          ))}
+        </div>
+
+        <div className={'lazyloader-block'}>
+            <p className={'lazyloader-block__text'}>Showing 4 of 100</p>
+            <CTAButton text={'See more'} outline />
+        </div>
+      </>
     )
   }
 }
