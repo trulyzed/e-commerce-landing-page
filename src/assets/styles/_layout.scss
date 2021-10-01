@@ -86,6 +86,7 @@
   }
   &__title {
     @include text3;
+    margin-bottom: scaleVal(13);
   }
   &__big-title {
     @include text4;
@@ -93,5 +94,6 @@
   }
   &__details {
     @include text5;
+    margin-bottom: scaleVal(13);
   }
 }

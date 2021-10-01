@@ -6,6 +6,7 @@ const CTACards = [
     category: 'Collection',
     bigTitle: <span>New <br/>Curtains</span>,
     image: '/images/bg.png',
+    imageOverlay: '/images/bg-o.png',
     contentPos: CONTENT_POS.BOTTOM_LEFT,
   },
   {
@@ -19,12 +20,14 @@ const CTACards = [
     title: 'SALE UPTO',
     details: '70%',
     image: '/images/bg4.png',
+    imageOverlay: '/images/bg4-o.png',
   },
   {
     category: 'Membership',
     title: 'New Membership',
     details: '10% Off',
     image: '/images/bg3.png',
+    imageOverlay: '/images/bg3-o.png',
   },
 ];
 

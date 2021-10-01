@@ -9,10 +9,10 @@ export const CONTENT_POS = {
 
 export class CTACard extends Component {
   render () {
-    const { category, title, bigTitle, details, ctaDark, image, contentPos } = this.props;
+    const { category, title, bigTitle, details, ctaDark, image, imageOverlay, contentPos } = this.props;
 
     return (
-      <div className={'cta-card'} style={{backgroundImage: `url(${image})`}}>
+      <div className={'cta-card'} style={{backgroundImage: `${(imageOverlay && `url(${imageOverlay}), `) || ''}url(${image})`}}>
         <div className={addClass([
           'cta-card__content',
           contentPos === CONTENT_POS.BOTTOM_LEFT && 'cta-card__content--bottom-left' 
