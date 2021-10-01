@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { CTACard, CONTENT_POS } from '~/components/layout/CTA/CTACard';
+import { ProductList } from '~/components/layout/product/ProductList';
 
 const CTACards = [
   {
@@ -31,31 +32,94 @@ const CTACards = [
   },
 ];
 
+const products = [
+  {
+    id: 1,
+    title: 'Strandmon Armchair',
+    photo: '/images/prod1.png',
+    rating: 5,
+    totalReviews: 3,
+    currency: 'BDT',
+    price: 2500,
+    originalPrice: 15000,
+  },
+  {
+    id: 2,
+    title: 'Malm',
+    photo: '/images/prod2.png',
+    rating: 5,
+    totalReviews: 3,
+    currency: 'BDT',
+    price: 2500,
+    originalPrice: 15000,
+  },
+  {
+    id: 3,
+    title: 'Hemlingby',
+    photo: '/images/prod3.png',
+    rating: 5,
+    totalReviews: 3,
+    currency: 'BDT',
+    price: 2500,
+    originalPrice: 15000,
+  },
+  {
+    id: 4,
+    title: 'Ivar',
+    photo: '/images/prod4.png',
+    rating: 5,
+    totalReviews: 3,
+    currency: 'BDT',
+    price: 2500,
+    originalPrice: 15000,
+  }
+]
+
 export class Home extends Component {
   render () {
     return (
-      <section className={'cta-card-block mt-6'}>
-        <div className={'cta-card-block__left'}>
-          <CTACard
-            {...CTACards[0]}
-          />
-        </div>
-        <div className={'cta-card-block__right'}>
-          <div className={'cta-card-block__right__top'}>
-            <CTACard
-              {...CTACards[1]}
-            />
+      <>
+        <section className={'wrapper'}>
+          <div className={'cta-card-block'}>
+            <div className={'cta-card-block__left'}>
+              <CTACard
+                {...CTACards[0]}
+              />
+            </div>
+            <div className={'cta-card-block__right'}>
+              <div className={'cta-card-block__right__top'}>
+                <CTACard
+                  {...CTACards[1]}
+                />
+              </div>
+              <div className={'cta-card-block__right__bottom'}>
+                <CTACard
+                  {...CTACards[2]}
+                />
+                <CTACard
+                  {...CTACards[3]}
+                />
+              </div>
+            </div>
           </div>
-          <div className={'cta-card-block__right__bottom'}>
-            <CTACard
-              {...CTACards[2]}
-            />
-            <CTACard
-              {...CTACards[3]}
-            />
+        </section>
+
+        <section className={'wrapper'}>
+          <div className={'products-list-block'}>
+            <div className={'products-list-block__details'}>
+              <p className={'products-list-block__category'}>
+                Armchairs
+              </p>
+              <p className={'products-list-block__title'}>
+                New Arrivals
+              </p>
+            </div>
+
+            <ProductList products={products} />
           </div>
-        </div>
-      </section>
+        </section>
+      </>
+
     )
   }
 }

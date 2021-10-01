@@ -66,3 +66,19 @@
   text-transform: uppercase;
   color: white;
 }
+
+@mixin text6 {
+  @include font-renner;
+  font-weight: 700;
+  font-size: scaleVal(18);
+  line-height: scaleVal(18);
+  color: black;
+}
+
+@mixin text7 {
+  @include font-renner;
+  font-weight: 400;
+  font-size: scaleVal(12);
+  line-height: scaleVal(12);
+  color: black;
+}
