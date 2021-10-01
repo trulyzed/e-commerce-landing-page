@@ -290,8 +290,11 @@
   flex-direction: column;
 
   &__text {
-    padding: scaleVal(9) scaleVal(44);
+    @include text8;
+    font-size: scaleVal(10);
+    line-height: scaleVal(10);
+    padding: scaleVal(12) scaleVal(44);
     border-bottom: 1px solid $dark;
-    margin-bottom: scaleVal(12);
+    margin-bottom: scaleVal(10);
   }
 }

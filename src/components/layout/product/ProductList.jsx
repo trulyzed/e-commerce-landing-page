@@ -1285,7 +1285,7 @@ export class ProductList extends Component {
         </div>
 
         <div className={'lazyloader-block'}>
-            <p className={'lazyloader-block__text'}>Showing 4 of 100</p>
+            <p className={'lazyloader-block__text'}>Showing 04 of 100</p>
             <CTAButton text={'See more'} outline />
         </div>
       </>
