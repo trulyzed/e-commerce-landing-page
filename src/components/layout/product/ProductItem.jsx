@@ -4,7 +4,7 @@ import PlusIcon from 'assets/images/plus.svg';
 import MinusIcon from 'assets/images/minus.svg';
 import { addClass } from "~/utils/app";
 import { notEmpty } from "~/utils/validation";
-import { humanizeDecimal } from "~/utils/number";
+import { humanizeDecimal, localeNumber } from "~/utils/number";
 
 const DEFAULT_CURRENCY = 'bdt';
 
@@ -41,12 +41,12 @@ export class ProductItem extends Component {
           <div className={'product-item__action-details'}>
             <span className={'product-item__price'}>
               <span className={'product-item__price__currency'}>{product.currency || DEFAULT_CURRENCY} </span>
-              {product.price}
+              {localeNumber(product.price)}
             </span>
             {notEmpty(product.regular_price) && product.regular_price !== product.price ?
               <span className={'product-item__original-price'}>
                 <span className={'product-item__original-price__currency'}>{product.currency || DEFAULT_CURRENCY} </span>
-                {product.regular_price}
+                {localeNumber(product.regular_price)}
               </span>
               : null
             }

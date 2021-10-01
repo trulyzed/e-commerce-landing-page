@@ -5,3 +5,7 @@ export const isInt = (val) => {
 export const humanizeDecimal = (val) => {
   return isInt(val) ? val : !isNaN(val) ? val.toFixed(1) : val;
 }
+
+export const localeNumber = (val) => {
+  return !isNaN(val) ? Number(val).toLocaleString() : val;
+}
