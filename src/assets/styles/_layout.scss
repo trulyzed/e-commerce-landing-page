@@ -268,15 +268,15 @@
   }
   &__original-price {
     @include font-renner;
-    font-size: scaleVal(7);
-    line-height: scaleVal(7);
+    font-size: scaleVal(8);
+    line-height: scaleVal(8);
     text-decoration: line-through;
     margin-left: scaleVal(14);
 
     &__currency {
       vertical-align: top;
-      font-size: scaleVal(4);
-      line-height: scaleVal(4);
+      font-size: scaleVal(6);
+      line-height: scaleVal(6);
       text-transform: uppercase;
     }
   }
