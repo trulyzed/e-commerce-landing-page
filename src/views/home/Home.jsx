@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CTACard, CONTENT_POS } from '~/components/layout/CTA/CTACard';
-import { ProductList } from '~/components/layout/product/ProductList';
+import { PaginatedProductList } from '~/components/layout/product/ProductList';
 
 const CTACards = [
   {
@@ -72,7 +72,7 @@ export class Home extends Component {
               </p>
             </div>
 
-            <ProductList products={[]} />
+            <PaginatedProductList />
           </div>
         </section>
       </>

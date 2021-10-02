@@ -3,10 +3,10 @@ import { CTAButton } from '~/components/layout/CTA/CTAButton';
 
 export class CTAExplore extends Component {
   render () {
-    const { ctaDark } = this.props;
+    const { ctaDark, onClick } = this.props;
 
     return (
-      <CTAButton text={'Explore'} ctaDark={ctaDark} />
+      <CTAButton text={'Explore'} ctaDark={ctaDark} onClick={onClick} />
     )
   }
 }

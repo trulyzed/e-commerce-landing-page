@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { CTAButton } from "../CTA/CTAButton";
+import { withPagination } from "~/hoc/withPagination";
 import { ProductItem } from "./ProductItem";
 
 const products = [
@@ -1269,26 +1269,21 @@ const products = [
   },
 ]
 
-export class ProductList extends Component {
+class ProductList extends Component {
   render () {
-    //const { products=[] } = this.props;
+    const { pagination } = this.props;
 
     return (
-      <>
-        <div className={'product-list'}>
-          {products.map(p => (
-            <ProductItem
-              key={p.id}
-              product={p}
-            />
-          ))}
-        </div>
-
-        <div className={'lazyloader-block'}>
-            <p className={'lazyloader-block__text'}>Showing 04 of 100</p>
-            <CTAButton text={'See more'} outline />
-        </div>
-      </>
+      <div className={'product-list'}>
+        {products.map(p => (
+          <ProductItem
+            key={p.id}
+            product={p}
+          />
+        ))}
+      </div>
     )
   }
 }
+
+export const PaginatedProductList = withPagination(ProductList);
