@@ -3,8 +3,7 @@ import { AsyncActionStatus, Reducers } from '~/configs/reducer';
 
 import { HTTPClient } from '~/utils/apiClient';
 
-//const httpClient = new HTTPClient(process.env.REACT_APP_API_BASE_URL);
-const httpClient = new HTTPClient('http://localhost:5000/');
+const httpClient = new HTTPClient(process.env.REACT_APP_API_BASE_URL);
 
 const initialState = {
   products: [],
@@ -13,16 +12,8 @@ const initialState = {
 }
 
 export const getProducts = createAsyncThunk(`${Reducers.PRODUCT}/getProducts`, async() => {
-  //const response = await httpClient.get('/wp-json/get_product/all');
-  const response = await httpClient.get('/products_temp');
-
-  const res = await new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(response.data);
-    }, 2000)
-  })
-  
-  return res;
+  const response = await httpClient.get('');
+  return response;
 })
 
 export const productSlice = createSlice({

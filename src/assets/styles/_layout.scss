@@ -366,3 +366,12 @@
     font-size: scaleVal(8);
   }
 }
+
+.empty-state-block {
+  padding: scaleVal(5);
+
+  &__error-message {
+    color: $dark;
+    opacity: .7;
+  }
+}

@@ -5,8 +5,9 @@ import ProductItem from "./ProductItem";
 import { getProducts } from '~/store/slices/productSlice';
 import { PaginationConfig } from "~/configs/pagination";
 import { Pagination } from "~/components/Pagination";
-import { Loader } from "../Loader";
+import { Loader } from "~/components/layout/Loader";
 import { addToCart } from "~/store/slices/cartSlice";
+import { EmptyState } from "../EmptyState";
 
 class ProductList extends Component {
   constructor(props) {
@@ -29,15 +30,21 @@ class ProductList extends Component {
     const { pagination } = this.state;
     if (products.length) return;
 
-    const { payload } = await getProducts();
+    const { payload, error } = await getProducts();
 
-    this.setState({
-      pagination: {
-        ...pagination,
-        total: payload.length,
-        hasMore: this.getPaginationSize() < payload.length,
-      }
-    });
+    if (error) {
+      
+    }
+
+    if (payload) {
+      this.setState({
+        pagination: {
+          ...pagination,
+          total: payload.length,
+          hasMore: this.getPaginationSize() < payload.length,
+        }
+      });
+    };
   }
 
   handleLoadMore = () => {
@@ -75,6 +82,7 @@ class ProductList extends Component {
     return (
       status === AsyncActionStatus.PENDING ?
       <Loader />
+      : !products.length ? <EmptyState errorMessage={'No data found!'} />
       :
       <>
         <div className={'product-list'}>
