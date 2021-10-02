@@ -171,6 +171,21 @@
       object-fit: cover;
     }
 
+    &__counter {
+      @include font-renner;
+      @include flex-center;
+      font-size: scaleVal(10);
+      line-height: scaleVal(10);
+      color: white;
+      position: absolute;
+      background-color: #F80D0D;
+      width: scaleVal(18);
+      height: scaleVal(18);
+      top: scaleVal(-4);
+      left: scaleVal(-2);
+      border-radius: scaleVal(2);
+    }
+
     @mixin badge($badge-color) {
       @include flex-center;
       height: scaleVal(25);
@@ -329,7 +344,7 @@
   right: scaleVal(35);
   top: scaleVal(250);
   z-index: 9999;
-
+  cursor: pointer;
 
   img {
     width: scaleVal(19);

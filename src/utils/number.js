@@ -9,3 +9,7 @@ export const humanizeDecimal = (val) => {
 export const localeNumber = (val) => {
   return !isNaN(val) ? Number(val).toLocaleString() : val;
 }
+
+export const addLeadingZero = (val, size=2) => {
+  return !isNaN(val) ? String(val).padStart(size, '0') : val;
+}

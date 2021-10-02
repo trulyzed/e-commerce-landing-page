@@ -29,6 +29,7 @@ class ProductItem extends Component {
             </div>
             : null
           }
+          {cartProduct && <span className={'product-item__photo-container__counter'}>{cartProduct.quantity}</span>}
         </div>
         <div className={'product-item__details-container'}>
           <p className={'product-item__title'}>{product.name}</p>
