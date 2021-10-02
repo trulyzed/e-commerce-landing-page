@@ -94,7 +94,7 @@ class ProductList extends Component {
 
         {pagination.total ?
           <Pagination
-            size={this.getPaginationSize()}
+            size={products.length}
             total={pagination.total}
             hasMore={pagination.hasMore}
             onLoadMore={this.handleLoadMore} />
