@@ -53,6 +53,11 @@
       @include text-dark;
     }
   }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
 }
 
 .cta-card-block {
@@ -296,5 +301,17 @@
     padding: scaleVal(12) scaleVal(44);
     border-bottom: 1px solid $dark;
     margin-bottom: scaleVal(10);
+  }
+}
+
+.loader-block {
+  @include flex-center;
+  padding: scaleVal(50) 0;
+  &__loader {
+    width: scaleVal(40);
+    height: scaleVal(40);
+    opacity: .5;
+    
+    @include spin-anim;
   }
 }
