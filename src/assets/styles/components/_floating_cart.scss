@@ -1,0 +1,33 @@
+.floating-cart-block {
+  @include flex-center;
+  height: scaleVal(40);
+  width: scaleVal(40);
+  background-color: #EF6E18;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: fixed;
+  right: scaleVal(35);
+  top: scaleVal(250);
+  z-index: 9999;
+  cursor: pointer;
+
+  img {
+    width: scaleVal(19);
+    margin-top: scaleVal(3);
+  }
+
+  &__counter {
+    @include flex-center;
+    @include font-renner;
+    height: scaleVal(13);
+    width: scaleVal(13);
+    background-color: #F80D0D;
+    border-radius: 50%;
+    border: 1px solid white;
+    position: absolute;
+    top: scaleVal(-5);
+    right: 0;
+    color: white;
+    font-size: scaleVal(8);
+  }
+}

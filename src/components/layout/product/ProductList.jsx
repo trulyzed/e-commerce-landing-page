@@ -83,8 +83,7 @@ class ProductList extends Component {
       status === AsyncActionStatus.PENDING ?
       <Loader />
       : !products.length ? <EmptyState errorMessage={'No data found!'} />
-      :
-      <>
+      : <>
         <div className={'product-list'}>
           {products.map(p => (
             <ProductItem

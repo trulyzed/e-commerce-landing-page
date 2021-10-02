@@ -1,0 +1,13 @@
+.load-more-block {
+  @include flex-center;
+  flex-direction: column;
+
+  &__text {
+    @include text8;
+    font-size: scaleVal(10);
+    line-height: scaleVal(10);
+    padding: scaleVal(12) scaleVal(44);
+    border-bottom: 1px solid $dark;
+    margin-bottom: scaleVal(10);
+  }
+}
