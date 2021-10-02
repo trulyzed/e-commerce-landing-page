@@ -21,7 +21,6 @@ export const cartSlice = createSlice({
       })
     },
     removeFromCart: (state, action) => {
-      console.log(action)
       const product = action.payload;
       const matchedIdx = state.cart.findIndex(i => i.id === product.id);
       if (matchedIdx > -1) {

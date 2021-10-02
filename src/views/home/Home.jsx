@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { CTACard, CONTENT_POS } from '~/components/layout/CTA/CTACard';
 import { PaginatedProductList } from '~/components/layout/product/ProductList';
 import { Reducers } from '~/configs/reducer';
+import { withFloatingCart } from '~/hoc/withFloatingCart';
 
 const CTACards = [
   {
@@ -37,8 +38,6 @@ const CTACards = [
 class Home extends Component {
   render () {
     const { cart } = this.props;
-
-    console.log(cart)
 
     return (
       <>
@@ -82,7 +81,6 @@ class Home extends Component {
           </div>
         </section>
       </>
-
     )
   }
 }
@@ -92,4 +90,4 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps)(Home) 
+export default connect(mapStateToProps)(withFloatingCart(Home)) 
