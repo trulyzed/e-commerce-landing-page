@@ -30,11 +30,7 @@ class ProductList extends Component {
     const { pagination } = this.state;
     if (products.length) return;
 
-    const { payload, error } = await getProducts();
-
-    if (error) {
-      
-    }
+    const { payload } = await getProducts();
 
     if (payload) {
       this.setState({
