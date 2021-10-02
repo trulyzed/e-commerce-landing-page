@@ -25,10 +25,11 @@
 }
 
 @mixin text1 {
-  @include font-renner;
+  @include font-poppins;
   font-size: scaleVal(10);
   line-height: scaleVal(10);
   color: white;
+  font-weight: 500;
 }
 
 @mixin text2 {
@@ -46,7 +47,7 @@
   font-size: scaleVal(18);
   line-height: scaleVal(18);
   text-transform: uppercase;
-  color: white;
+  color: #EFEFEF;
 }
 
 @mixin text4 {
@@ -64,7 +65,7 @@
   font-size: scaleVal(30);
   line-height: scaleVal(30);
   text-transform: uppercase;
-  color: #EFEFEF;
+  color: white;
 }
 
 @mixin text6 {
@@ -72,7 +73,7 @@
   font-weight: 700;
   font-size: scaleVal(18);
   line-height: scaleVal(18);
-  color: black;
+  color: $dark;
 }
 
 @mixin text7 {

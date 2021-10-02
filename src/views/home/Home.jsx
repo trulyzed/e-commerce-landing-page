@@ -15,7 +15,7 @@ const CTACards = [
     category: 'Collection',
     bigTitle: 'New Collection',
     image: '/images/bg2.png',
-    ctaDark: true
+    ctaDark: true,
   },
   {
     category: 'SALES',

@@ -1,0 +1,32 @@
+.cta-card-block {
+  &__left {
+    .cta-card__big-title {
+      color: $dark;
+      margin-bottom: scaleVal(15);
+    }
+  }
+
+  &__right__top {
+    .cta-button {
+      margin-right: scaleVal(14);
+      &__text {
+        font-weight: 400;
+      }
+    }
+
+    .cta-card {
+      padding-top: scaleVal(30);
+      padding-right: scaleVal(36);
+      &__big-title {
+        margin-right: scaleVal(14);
+        margin-bottom: scaleVal(13);
+      }
+    }
+  }
+
+  &__right__bottom {
+    .cta-card:last-child {
+      padding-right: scaleVal(40);
+    }
+  }
+}

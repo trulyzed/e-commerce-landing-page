@@ -36,7 +36,11 @@
 
   &__left {
     display: flex;
-    flex: 10;
+    flex: 9.9;
+
+    .cta-card {
+      background-position-y: scaleVal(-1);
+    }
   }
 
   &__right {
@@ -54,10 +58,10 @@
       flex: 29;
 
       .cta-card:first-child {
-        flex: 19;
+        flex: 3.5;
       }
       .cta-card:last-child {
-        flex: 13;
+        flex: 2;
       }
     }
   }
@@ -90,7 +94,7 @@
   }
   &__title {
     @include text3;
-    margin-bottom: scaleVal(13);
+    margin-bottom: scaleVal(10);
   }
   &__big-title {
     @include text4;
