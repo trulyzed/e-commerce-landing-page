@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { CTACard, CONTENT_POS } from '~/components/layout/CTA/CTACard';
 import { PaginatedProductList } from '~/components/layout/product/ProductList';
+import { Reducers } from '~/configs/reducer';
 
 const CTACards = [
   {
@@ -32,8 +34,12 @@ const CTACards = [
   },
 ];
 
-export class Home extends Component {
+class Home extends Component {
   render () {
+    const { cart } = this.props;
+
+    console.log(cart)
+
     return (
       <>
         <section className={'wrapper'}>
@@ -80,3 +86,10 @@ export class Home extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  cart: state[Reducers.CART].cart,
+});
+
+
+export default connect(mapStateToProps)(Home) 

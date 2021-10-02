@@ -1,11 +1,12 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 import { AsyncActionStatus, Reducers } from "~/configs/reducer";
-import { ProductItem } from "./ProductItem";
+import ProductItem from "./ProductItem";
 import { getProducts } from '~/store/slices/productSlice';
 import { PaginationConfig } from "~/configs/pagination";
 import { Pagination } from "~/components/Pagination";
 import { Loader } from "../Loader";
+import { addToCart } from "~/store/slices/cartSlice";
 
 class ProductList extends Component {
   constructor(props) {
@@ -104,7 +105,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProducts: () => dispatch(getProducts())
+    getProducts: () => dispatch(getProducts()),
+    addToCart: () => dispatch(addToCart()),
   }
 };
 

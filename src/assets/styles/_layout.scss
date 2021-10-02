@@ -36,6 +36,7 @@
   border-radius: scaleVal(30);
   cursor: pointer;
   @include flex-center;
+  user-select: none;
 
   &--outline {
     background-color: white;
@@ -277,6 +278,7 @@
       width: scaleVal(30);
       height: scaleVal(30);
       border-radius: scaleVal(4);
+      user-select: none;
 
       &--minus {
         margin-right: scaleVal(4);

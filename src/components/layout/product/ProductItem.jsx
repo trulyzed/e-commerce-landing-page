@@ -5,13 +5,17 @@ import MinusIcon from 'assets/images/minus.svg';
 import { addClass } from "~/utils/app";
 import { notEmpty } from "~/utils/validation";
 import { humanizeDecimal, localeNumber } from "~/utils/number";
+import { addToCart, removeFromCart } from "~/store/slices/cartSlice";
+import { connect } from "react-redux";
+import { Reducers } from "~/configs/reducer";
 
 const DEFAULT_CURRENCY = 'bdt';
 
-export class ProductItem extends Component {
+class ProductItem extends Component {
   render () {
-    const { product } = this.props;
+    const { product, addToCart, removeFromCart, cart } = this.props;
     const savePercentage = notEmpty(product.regular_price) ? ((product.regular_price - product.price) / product.regular_price) * 100 : undefined;
+    const cartProduct = cart.find(i => i.id === product.id);
 
     return (
       <div className={'product-item'}>
@@ -51,10 +55,13 @@ export class ProductItem extends Component {
               : null
             }
             <div className={'product-item__action-container'}>
-              <div className={'product-item__action-container__action product-item__action-container__action--minus'}>
-                <img src={MinusIcon} alt={'remove product'} />
-              </div>
-              <div className={'product-item__action-container__action'}>
+              {cartProduct?.quantity > 0 ?
+                <div className={'product-item__action-container__action product-item__action-container__action--minus'} onClick={() => removeFromCart(product)}>
+                  <img src={MinusIcon} alt={'remove product'} />
+                </div>
+                : null
+              }
+              <div className={'product-item__action-container__action'} onClick={() => addToCart(product)}>
                 <img src={PlusIcon} alt={'add product'} />
               </div>
             </div>
@@ -64,3 +71,17 @@ export class ProductItem extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  cart: state[Reducers.CART].cart
+});
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (payload) => dispatch(addToCart(payload)),
+    removeFromCart: (payload) => dispatch(removeFromCart(payload)),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductItem)
